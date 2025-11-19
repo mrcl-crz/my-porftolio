@@ -57,9 +57,23 @@
     <!-- Seção Principal - Introdução -->
     <section id="inicio" class="bg-indigo-700 text-white py-20 md:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-4">
-                Olá, eu sou Marcelo Cruz
-            </h2>
+            
+            <!-- CONTÊINER FLEX PARA ALINHAR FOTO E TEXTO -->
+            <div class="flex flex-col items-center justify-center">
+                
+                <!-- FOTO / AVATAR (Você deve substituir o URL do src) -->
+                <img 
+                    src="https://placehold.co/128x128/FFFFFF/000000?text=MC" 
+                    alt="Foto de perfil de Marcelo Cruz" 
+                    class="w-32 h-32 rounded-full ring-4 ring-white shadow-xl mb-4"
+                    onerror="this.onerror=null; this.src='https://placehold.co/128x128/FFFFFF/000000?text=MC';"
+                >
+                
+                <h2 class="text-5xl md:text-6xl font-extrabold mb-2">
+                    Olá, eu sou Marcelo Cruz
+                </h2>
+            </div>
+            
             <p class="text-xl md:text-2xl mb-8 font-light">
                 Analista de Dados | Criando conteúdo e transformando dados brutos em conhecimento.
             </p>
