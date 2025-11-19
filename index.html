@@ -22,6 +22,17 @@
             max-height: 80vh;
             overflow-y: auto;
         }
+        /* Estilo customizado para os botões de filtro */
+        .filter-button {
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .filter-button.active {
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -32,7 +43,7 @@
             <h1 class="text-2xl font-bold text-indigo-600">
                 Portfólio de Dados
             </h1>
-            <nav class="space-x-4">
+            <nav class="space-x-4 flex items-center">
                 <a href="#sobre" class="text-gray-600 hover:text-indigo-600 transition duration-300">Sobre Mim</a>
                 <a href="#experiencia" class="text-gray-600 hover:text-indigo-600 transition duration-300">Experiência</a>
                 <a href="#formacao" class="text-gray-600 hover:text-indigo-600 transition duration-300">Formação</a>
@@ -294,9 +305,14 @@
     <!-- Nova Seção: Conteúdos que eu criei -->
     <section id="conteudos" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
+            <h3 class="text-4xl font-bold text-center mb-8 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Conteúdos que eu criei
             </h3>
+
+            <!-- Botões de Filtro -->
+            <div id="filter-buttons-container" class="flex flex-wrap justify-center gap-3 mb-12">
+                <!-- Botões serão injetados aqui pelo JavaScript -->
+            </div>
             
             <!-- Container onde os cards serão injetados pelo JS -->
             <div id="conteudo-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -344,51 +360,80 @@
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.819-.203.819-.442 0-.218-.007-.796-.011-1.46-3.344.723-4.04-1.609-4.04-1.609-.547-1.387-1.334-1.756-1.334-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.837 2.809 1.305 3.493.998.108-.77.42-.998.761-1.226-2.665-.3-5.466-1.332-5.466-5.93 0-1.313.47-2.383 1.239-3.221-.124-.303-.535-1.524.118-3.18 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.301-1.23 3.301-1.23.653 1.656.242 2.877.118 3.18.77.838 1.239 1.908 1.239 3.221 0 4.61-2.809 5.62-5.474 5.922.43.374.817 1.118.817 2.251 0 1.619-.015 2.92-.015 3.315 0 .239.219.563.824.441C20.565 21.792 24 17.294 24 12c0-6.627-5.373-12-12-12z"/></svg>
                 </a>
             </div>
-            <p class="mt-4 text-sm text-gray-500">© 2024 Marcelo Cruz. Desenvolvido com HTML e Tailwind CSS.</p>
+            <p id="footer-copyright" class="mt-4 text-sm text-gray-500">© 2024 Marcelo Cruz. Desenvolvido com HTML e Tailwind CSS.</p>
         </div>
     </footer>
 
     <!-- Script para rolagem suave e GERAÇÃO DINÂMICA DE CONTEÚDOS -->
     <script>
-        // 1. Array de dados com Cursos (já no currículo) e Artigos (fornecidos agora)
+        // Variáveis globais para rastrear o estado do filtro
+        let activeFilter = 'Todos'; 
+
+        // 1. Array de dados com Cursos e Artigos (Tags simplificadas)
         const contents = [
-            // CURSOS (Mantidos com base no currículo)
-            { type: 'Curso Alura', title: 'Power BI: construindo cálculos com Dax', description: 'Foco em cálculos avançados e modelagem no Power BI.', link: 'https://cursos.alura.com.br/course/power-bi-construindo-calculos-dax' },
-            { type: 'Curso Alura', title: 'Engenharia de Analytics: apresentando resultados com QuickSight', description: 'Treinamento em visualização e entrega de resultados utilizando a ferramenta da AWS.', link: 'https://cursos.alura.com.br/course/engenharia-analytics-apresentando-resultados-quicksight' },
-            { type: 'Curso Alura', title: 'Engenharia de Analytics: construindo uma pipeline automatizada', description: 'Foco em ETL e automação de fluxos de dados em ambiente de nuvem.', link: 'https://cursos.alura.com.br/course/engenharia-analytics-construindo-pipeline-automatizada' },
-            { type: 'Curso Alura', title: 'Praticando Power BI: criando métricas com DAX', description: 'Curso prático focado na aplicação da linguagem DAX para métricas de negócio.', link: 'https://cursos.alura.com.br/course/praticando-power-bi-criando-metricas-dax' },
-            { type: 'Curso Alura', title: 'Praticando SQL: realizando consultas', description: 'Foco na prática de consultas e manipulação de dados com SQL.', link: 'https://cursos.alura.com.br/course/sql-realizando-consultas' },
+            // CURSOS
+            { type: 'Curso Alura', title: 'Power BI: construindo cálculos com Dax', description: 'Foco em cálculos avançados e modelagem no Power BI.', link: 'https://cursos.alura.com.br/course/power-bi-construindo-calculos-dax', typeKey: 'curso', tags: ['BI/Visualização', 'Programação/Banco de Dados'] },
+            { type: 'Curso Alura', title: 'Engenharia de Analytics: apresentando resultados com QuickSight', description: 'Treinamento em visualização e entrega de resultados utilizando a ferramenta da AWS.', link: 'https://cursos.alura.com.br/course/engenharia-analytics-apresentando-resultados-quicksight]', typeKey: 'curso', tags: ['BI/Visualização', 'Engenharia/ETL'] },
+            { type: 'Curso Alura', title: 'Engenharia de Analytics: construindo uma pipeline automatizada', description: 'Foco em ETL e automação de fluxos de dados em ambiente de nuvem.', link: 'https://cursos.alura.com.br/course/engenharia-analytics-construindo-pipeline-automatizada', typeKey: 'curso', tags: ['Engenharia/ETL', 'Programação/Banco de Dados'] },
+            { type: 'Curso Alura', title: 'Praticando Power BI: criando métricas com DAX', description: 'Curso prático focado na aplicação da linguagem DAX para métricas de negócio.', link: 'https://cursos.alura.com.br/course/praticando-power-bi-criando-metricas-dax', typeKey: 'curso', tags: ['BI/Visualização', 'Programação/Banco de Dados'] },
+            { type: 'Curso Alura', title: 'Praticando SQL: realizando consultas', description: 'Foco na prática de consultas e manipulação de dados com SQL.', link: 'https://cursos.alura.com.br/course/sql-realizando-consultas', typeKey: 'curso', tags: ['Programação/Banco de Dados'] },
             
-            // ARTIGOS (Novos, fornecidos pelo usuário)
-            { type: 'Artigo Alura', title: 'Engenharia de Dados', description: 'Conceitos fundamentais e arquitetura de Engenharia de Dados.', link: 'https://www.alura.com.br/artigos/engenharia-dados' },
-            { type: 'Artigo Alura', title: 'Power BI: Tipos de Licenças', description: 'Guia sobre as diferentes licenças disponíveis no Power BI.', link: 'https://www.alura.com.br/artigos/power-bi-tipos-de-licencas' },
-            { type: 'Artigo Alura', title: 'Linguagem DAX', description: 'Exploração da linguagem Data Analysis Expressions (DAX) para Power BI.', link: 'https://www.alura.com.br/artigos/linguagem-dax' },
-            { type: 'Artigo Alura', title: 'Business Intelligence (BI)', description: 'O que é Business Intelligence e como aplicá-lo.', link: 'https://www.alura.com.br/artigos/business-intelligence-bi' },
-            { type: 'Artigo Alura', title: 'Tipos de Dados no Power BI', description: 'Entendendo e tratando os diferentes tipos de dados no Power BI.', link: 'https://www.alura.com.br/artigos/tipos-de-dados-power-bi' },
-            { type: 'Artigo Alura', title: 'Códigos em R', description: 'Exemplos e boas práticas de codificação na linguagem R.', link: 'https://www.alura.com.br/artigos/codigos-em-r' },
-            { type: 'Artigo Alura', title: 'Pacote R', description: 'Introdução e uso de pacotes essenciais no ecossistema R.', link: 'https://www.alura.com.br/artigos/pacote-r' },
-            { type: 'Artigo Alura', title: 'Como Criar Conta do Power BI', description: 'Passo a passo para começar a usar o Power BI.', link: 'https://www.alura.com.br/artigos/como-criar-conta-do-power-bi' },
-            { type: 'Artigo Alura', title: 'Ambientes em R', description: 'Gerenciamento e configuração de ambientes de desenvolvimento em R.', link: 'https://www.alura.com.br/artigos/ambientes-em-r' },
-            { type: 'Artigo Alura', title: 'Problemas Resolvidos com Algoritmos de Classificação', description: 'Exemplos práticos de uso de algoritmos de Machine Learning.', link: 'https://www.alura.com.br/artigos/problemas-resolvidos-algoritmos-classificacao' },
-            { type: 'Artigo Alura', title: 'Machine Learning: Técnicas Bagging e Boosting', description: 'Explicação de métodos de ensemble para Machine Learning.', link: 'https://www.alura.com.br/artigos/machine-learning-tecnicas-bagging-boosting' },
-            { type: 'Artigo Alura', title: 'Arquitetura Serverless', description: 'Conceitos e benefícios da arquitetura de sistemas sem servidor.', link: 'https://www.alura.com.br/artigos/arquitetura-serverless' },
-            { type: 'Artigo Alura', title: 'Executores Airflow: Tipos e Funções', description: 'Detalhes sobre os executores do Apache Airflow para orquestração de dados.', link: 'https://www.alura.com.br/artigos/executores-airflow-tipos-funcoes' },
-            { type: 'Artigo Alura', title: 'Modelos de NLP', description: 'Visão geral sobre Modelos de Processamento de Linguagem Natural.', link: 'https://www.alura.com.br/artigos/modelos-de-nlp' },
-            { type: 'Artigo Alura', title: 'Correlação', description: 'Entendendo o conceito e cálculo de correlação em estatística.', link: 'https://www.alura.com.br/artigos/correlacao' },
-            { type: 'Artigo Alura', title: 'DAX Cheat Sheet', description: 'Uma folha de consulta rápida para a linguagem DAX.', link: 'https://www.alura.com.br/artigos/dax-cheat-sheet' },
-            { type: 'Artigo Alura', title: 'SQLite: Da instalação até a primeira tabela', description: 'Introdução prática ao sistema de gerenciamento de banco de dados SQLite.', link: 'https://www.alura.com.br/artigos/sqlite-da-instalacao-ate-primeira-tabela' },
-            { type: 'Artigo Alura', title: 'Portfólio em Dados', description: 'Dicas e orientações para criar um portfólio eficaz na área de dados.', link: 'https://www.alura.com.br/artigos/portfolio-em-dados' },
+            // ARTIGOS
+            { type: 'Artigo Alura', title: 'Engenharia de Dados', description: 'Conceitos fundamentais e arquitetura de Engenharia de Dados.', link: 'https://www.alura.com.br/artigos/engenharia-dados', typeKey: 'artigo', tags: ['Engenharia/ETL'] },
+            { type: 'Artigo Alura', title: 'Power BI: Tipos de Licenças', description: 'Guia sobre as diferentes licenças disponíveis no Power BI.', link: 'https://www.alura.com.br/artigos/power-bi-tipos-de-licencas', typeKey: 'artigo', tags: ['BI/Visualização'] },
+            { type: 'Artigo Alura', title: 'Linguagem DAX', description: 'Exploração da linguagem Data Analysis Expressions (DAX) para Power BI.', link: 'https://www.alura.com.br/artigos/linguagem-dax', typeKey: 'artigo', tags: ['BI/Visualização', 'Programação/Banco de Dados'] },
+            { type: 'Artigo Alura', title: 'Business Intelligence (BI)', description: 'O que é Business Intelligence e como aplicá-lo.', link: 'https://www.alura.com.br/artigos/business-intelligence-bi', typeKey: 'artigo', tags: ['BI/Visualização'] },
+            { type: 'Artigo Alura', title: 'Tipos de Dados no Power BI', description: 'Entendendo e tratando os diferentes tipos de dados no Power BI.', link: 'https://www.alura.com.br/artigos/tipos-de-dados-power-bi', typeKey: 'artigo', tags: ['BI/Visualização'] },
+            { type: 'Artigo Alura', title: 'Códigos em R', description: 'Exemplos e boas práticas de codificação na linguagem R.', link: 'https://www.alura.com.br/artigos/codigos-em-r', typeKey: 'artigo', tags: ['Programação/Banco de Dados', 'Machine Learning'] },
+            { type: 'Artigo Alura', title: 'Pacote R', description: 'Introdução e uso de pacotes essenciais no ecossistema R.', link: 'https://www.alura.com.br/artigos/pacote-r', typeKey: 'artigo', tags: ['Programação/Banco de Dados'] },
+            { type: 'Artigo Alura', title: 'Como Criar Conta do Power BI', description: 'Passo a passo para começar a usar o Power BI.', link: 'https://www.alura.com.br/artigos/como-criar-conta-do-power-bi', typeKey: 'artigo', tags: ['BI/Visualização'] },
+            { type: 'Artigo Alura', title: 'Ambientes em R', description: 'Gerenciamento e configuração de ambientes de desenvolvimento em R.', link: 'https://www.alura.com.br/artigos/ambientes-em-r', typeKey: 'artigo', tags: ['Programação/Banco de Dados'] },
+            { type: 'Artigo Alura', title: 'Problemas Resolvidos com Algoritmos de Classificação', description: 'Exemplos práticos de uso de algoritmos de Machine Learning.', link: 'https://www.alura.com.br/artigos/problemas-resolvidos-algoritmos-classificacao', typeKey: 'artigo', tags: ['Machine Learning', 'Programação/Banco de Dados'] },
+            { type: 'Artigo Alura', title: 'Machine Learning: Técnicas Bagging e Boosting', description: 'Explicação de métodos de ensemble para Machine Learning.', link: 'https://www.alura.com.br/artigos/machine-learning-tecnicas-bagging-boosting', typeKey: 'artigo', tags: ['Machine Learning'] },
+            { type: 'Artigo Alura', title: 'Arquitetura Serverless', description: 'Conceitos e benefícios da arquitetura de sistemas sem servidor.', link: 'https://www.alura.com.br/artigos/arquitetura-serverless', typeKey: 'artigo', tags: ['Engenharia/ETL'] },
+            { type: 'Artigo Alura', title: 'Executores Airflow: Tipos e Funções', description: 'Detalhes sobre os executores do Apache Airflow para orquestração de dados.', link: 'https://www.alura.com.br/artigos/executores-airflow-tipos-funcoes', typeKey: 'artigo', tags: ['Engenharia/ETL', 'Programação/Banco de Dados'] },
+            { type: 'Artigo Alura', title: 'Modelos de NLP', description: 'Visão geral sobre Modelos de Processamento de Linguagem Natural.', link: 'https://www.alura.com.br/artigos/modelos-de-nlp', typeKey: 'artigo', tags: ['Machine Learning'] },
+            { type: 'Artigo Alura', title: 'Correlação', description: 'Entendendo o conceito e cálculo de correlação em estatística.', link: 'https://www.alura.com.br/artigos/correlacao', typeKey: 'artigo', tags: ['Programação/Banco de Dados'] },
+            { type: 'Artigo Alura', title: 'DAX Cheat Sheet', description: 'Uma folha de consulta rápida para a linguagem DAX.', link: 'https://www.alura.com.br/artigos/dax-cheat-sheet', typeKey: 'artigo', tags: ['BI/Visualização', 'Programação/Banco de Dados'] },
+            { type: 'Artigo Alura', title: 'SQLite: Da instalação até a primeira tabela', description: 'Introdução prática ao sistema de gerenciamento de banco de dados SQLite.', link: 'https://www.alura.com.br/artigos/sqlite-da-instalacao-ate-primeira-tabela', typeKey: 'artigo', tags: ['Programação/Banco de Dados'] },
+            { type: 'Artigo Alura', title: 'Portfólio em Dados', description: 'Dicas e orientações para criar um portfólio eficaz na área de dados.', link: 'https://www.alura.com.br/artigos/portfolio-em-dados', typeKey: 'artigo', tags: ['Carreira'] },
         ];
 
-        // 2. Função para gerar os cards de conteúdo
-        function renderContentCards() {
+        // 2. Função utilitária para obter tags únicas
+        function getUniqueTags() {
+            const tagSet = new Set(['Todos']);
+            contents.forEach(item => {
+                item.tags.forEach(tag => tagSet.add(tag));
+            });
+            // Converte para array e ordena, mantendo 'Todos' em primeiro
+            const tags = Array.from(tagSet);
+            tags.sort((a, b) => {
+                if (a === 'Todos') return -1;
+                if (b === 'Todos') return 1;
+                return a.localeCompare(b);
+            });
+            return tags;
+        }
+
+        // 3. Função para gerar os cards de conteúdo
+        function renderContentCards(currentFilter = activeFilter) {
             const container = document.getElementById('conteudo-cards-container');
             if (!container) return;
 
-            // Limpa o container antes de adicionar os novos cards
+            // Filtra o conteúdo com base no filtro ativo
+            const filteredContents = currentFilter === 'Todos'
+                ? contents
+                : contents.filter(item => item.tags.includes(currentFilter));
+            
             container.innerHTML = '';
+            
+            if (filteredContents.length === 0) {
+                const message = '<p class="text-xl text-gray-500 text-center col-span-full py-8">Nenhum conteúdo encontrado para este filtro.</p>';
+                container.innerHTML = message;
+                return;
+            }
 
-            contents.forEach(item => {
+            filteredContents.forEach(item => {
                 const cardHtml = `
                     <a href="${item.link}" target="_blank" class="block bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 transform hover:shadow-xl hover:scale-[1.02] transition duration-300">
                         <span class="text-sm text-indigo-600 font-medium mb-1 inline-block">${item.type}</span>
@@ -399,8 +444,54 @@
                 container.innerHTML += cardHtml;
             });
         }
+        
+        // 4. Configura e lida com a lógica dos botões de filtro
+        function setupFilterButtons() {
+            const container = document.getElementById('filter-buttons-container');
+            if (!container) return;
 
-        // 3. Inicialização e rolagem suave
+            container.innerHTML = '';
+            const tags = getUniqueTags();
+
+            tags.forEach(tag => {
+                const isActive = tag === activeFilter ? 'active' : '';
+                
+                const button = document.createElement('button');
+                button.textContent = tag;
+                button.setAttribute('data-filter', tag);
+                // Adiciona o 'bg-indigo-600' e 'text-white' ao estado ativo
+                button.className = `filter-button bg-white text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 font-medium py-2 px-4 rounded-full border border-gray-300 ${isActive}`;
+                
+                button.addEventListener('click', handleFilterClick);
+                container.appendChild(button);
+            });
+        }
+        
+        // 5. Manipulador de clique no botão de filtro
+        function handleFilterClick(event) {
+            const newFilter = event.target.getAttribute('data-filter');
+            
+            // 1. Atualiza o estado do filtro
+            activeFilter = newFilter;
+            
+            // 2. Renderiza os cards filtrados 
+            renderContentCards(activeFilter);
+            
+            // 3. Atualiza os botões para destacar o ativo
+            setupFilterButtons();
+        }
+
+        // 6. Função para atualizar o ano no rodapé
+        function updateFooterYear() {
+            const yearSpan = document.getElementById('footer-copyright');
+            const currentYear = new Date().getFullYear();
+            if (yearSpan) {
+                yearSpan.innerHTML = `© ${currentYear} Marcelo Cruz. Desenvolvido com HTML e Tailwind CSS.`;
+            }
+        }
+
+
+        // 7. Inicialização da página
         window.onload = function () {
             // Rola suavemente entre as seções
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -411,9 +502,13 @@
                     });
                 });
             });
+            
+            // Gera os cards de conteúdo e os botões de filtro
+            setupFilterButtons(); // Configura botões
+            renderContentCards(); // Renderiza cards sem filtro (Todos)
 
-            // Gera os cards de conteúdo
-            renderContentCards();
+            // Atualiza o ano no rodapé
+            updateFooterYear();
         }
     </script>
 </body>
