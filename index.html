@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -352,4 +353,360 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Portfólio de Dados</title>
+    <!-- Carrega o Tailwind CSS para estilização fácil e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            color: #1e293b;
+        }
+        /* Estilo para a modal (pop-up) */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">
+                Portfólio de Dados
+            </h1>
+            <nav class="space-x-4">
+                <a href="#sobre" class="text-gray-600 hover:text-indigo-600 transition duration-300">Sobre Mim</a>
+                <a href="#experiencia" class="text-gray-600 hover:text-indigo-600 transition duration-300">Experiência</a>
+                <a href="#formacao" class="text-gray-600 hover:text-indigo-600 transition duration-300">Formação</a>
+                <a href="#habilidades" class="text-gray-600 hover:text-indigo-600 transition duration-300">Habilidades</a>
+                <a href="#projetos" class="text-gray-600 hover:text-indigo-600 transition duration-300">Projetos</a>
+                <a href="#conteudos" class="text-gray-600 hover:text-indigo-600 transition duration-300">Conteúdos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Principal - Introdução -->
+    <section id="inicio" class="bg-indigo-700 text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-4">
+                Olá, eu sou [Seu Nome]
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 font-light">
+                Cientista / Analista de Dados | Transformando dados brutos em decisões estratégicas.
+            </p>
+            <a href="#projetos" class="inline-block bg-white text-indigo-700 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                Ver Projetos de Dados
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre" class="py-16 md:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
+                Sobre Mim
+            </h3>
+            <div class="bg-gray-50 p-6 md:p-10 rounded-xl shadow-lg">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Sou um profissional apaixonado por desvendar padrões e contar histórias por meio dos dados. Minha jornada na área de dados começou há [X] anos, focada em [sua área de foco principal, ex: Machine Learning, Business Intelligence]. Acredito que a análise de dados é a chave para otimizar processos e impulsionar o crescimento.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Minha especialidade inclui a criação de modelos preditivos robustos e a construção de dashboards interativos que capacitam a liderança a tomar decisões baseadas em evidências. Estou sempre buscando aprender novas tecnologias e aplicar as melhores práticas em cada desafio.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Nova Seção: Experiência -->
+    <section id="experiencia" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
+                Experiência
+            </h3>
+            <div class="space-y-8">
+                <!-- Item de Experiência 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+                    <h4 class="text-2xl font-semibold text-gray-800">[Cargo Atual]</h4>
+                    <p class="text-indigo-600 font-medium mb-2">[Empresa Atual] | [Data Início] - Atualmente</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Responsável pela criação e manutenção de pipelines de dados (ETL) utilizando [Ferramenta].</li>
+                        <li>Desenvolvimento de modelos de Machine Learning para otimização de [Processo/Negócio].</li>
+                        <li>Colaboração com equipes de produto e engenharia para definir KPIs e métricas de sucesso.</li>
+                    </ul>
+                </div>
+                <!-- Item de Experiência 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+                    <h4 class="text-2xl font-semibold text-gray-800">[Cargo Anterior]</h4>
+                    <p class="text-indigo-600 font-medium mb-2">[Empresa Anterior] | [Data Início] - [Data Fim]</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Realização de análises exploratórias complexas para identificar tendências e anomalias.</li>
+                        <li>Criação de relatórios e dashboards em [Ferramenta BI] para a diretoria executiva.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção: Formação -->
+    <section id="formacao" class="py-16 md:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
+                Formação
+            </h3>
+            <div class="space-y-8">
+                <!-- Item de Formação 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+                    <h4 class="text-2xl font-semibold text-gray-800">[Nome do Curso/Grau]</h4>
+                    <p class="text-indigo-600 font-medium mb-2">[Nome da Instituição] | [Ano Conclusão]</p>
+                    <p class="text-gray-700">Foco em [Área de Estudo Principal], incluindo disciplinas como estatística avançada, programação e bases de dados.</p>
+                </div>
+                <!-- Item de Formação 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+                    <h4 class="text-2xl font-semibold text-gray-800">Certificação Profissional em [Nome da Certificação]</h4>
+                    <p class="text-indigo-600 font-medium mb-2">[Instituição Certificadora] | [Ano Conclusão]</p>
+                    <p class="text-gray-700">Foco em [Habilidade Específica], comprovando proficiência em [Tecnologia].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Habilidades (Reutilizada e mantida) -->
+    <section id="habilidades" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
+                Habilidades
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Coluna 1: Linguagens -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
+                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600">Linguagens</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                Python (Pandas, NumPy, Scikit-learn)
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            SQL (PostgreSQL, MySQL, BigQuery)
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            R (Tidyverse, Shiny - Opcional)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 2: Visualização e BI -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
+                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600">Visualização & BI</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Power BI
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Tableau / Looker Studio
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Matplotlib / Seaborn / Plotly
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Ferramentas e Nuvem -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
+                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600">Plataformas & Cloud</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Git / GitHub / Versionamento
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            AWS (S3, SageMaker) ou GCP (BigQuery)
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Excel / Google Sheets / Ferramentas ETL
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-bold text-center mb-16 text-gray-800 border-b-2 border-indigo-500 pb-2">
+                Projetos
+            </h3>
+
+            <!-- Card de Projeto 1 -->
+            <div id="project-churn" class="flex flex-col md:flex-row bg-gray-50 rounded-xl shadow-lg overflow-hidden mb-12 transform hover:shadow-xl transition duration-300">
+                <div class="md:w-1/3 bg-indigo-500 p-6 flex items-center justify-center">
+                    <!-- Placeholder para imagem/ícone -->
+                    <div class="text-white text-5xl font-bold p-4 border-4 border-white rounded-full">P1</div>
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Previsão de Churn de Clientes (Machine Learning)</h4>
+                    <p class="text-sm text-indigo-600 font-semibold mb-4">
+                        Tecnologias: Python, Scikit-learn, AWS Sagemaker
+                    </p>
+                    <p id="churn-description" class="text-gray-700 mb-4">
+                        Construção de um modelo de classificação (Random Forest) para prever quais clientes de uma telecomunicações estavam em risco de cancelamento (*churn*), com o objetivo de reduzir a taxa de evasão em 15%.
+                    </p>
+                    <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                        <a href="https://github.com/seurepositorio/projeto-churn" target="_blank" class="inline-block text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded-lg font-semibold transition duration-300 text-center">
+                            Ver Repositório no GitHub &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de Projeto 2 -->
+            <div class="flex flex-col md:flex-row bg-gray-50 rounded-xl shadow-lg overflow-hidden mb-12 transform hover:shadow-xl transition duration-300">
+                <div class="md:w-1/3 bg-indigo-500 p-6 flex items-center justify-center">
+                    <!-- Placeholder para imagem/ícone -->
+                    <div class="text-white text-5xl font-bold p-4 border-4 border-white rounded-full">P2</div>
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Análise de Vendas e Desempenho (BI Dashboard)</h4>
+                    <p class="text-sm text-indigo-600 font-semibold mb-4">
+                        Tecnologias: SQL, Power BI, DAX
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Desenvolvimento de um dashboard interativo no Power BI para monitorar métricas de vendas em tempo real, permitindo à equipe identificar *gaps* de performance e otimizar campanhas. Inclui ETL simples com SQL.
+                    </p>
+                    <a href="https://app.powerbi.com/view?r=seu-link-dashboard" target="_blank" class="inline-block text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded-lg font-semibold transition duration-300">
+                        Ver Dashboard (Link Fictício) &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card de Projeto 3 -->
+            <div class="flex flex-col md:flex-row bg-gray-50 rounded-xl shadow-lg overflow-hidden mb-12 transform hover:shadow-xl transition duration-300">
+                <div class="md:w-1/3 bg-indigo-500 p-6 flex items-center justify-center">
+                    <!-- Placeholder para imagem/ícone -->
+                    <div class="text-white text-5xl font-bold p-4 border-4 border-white rounded-full">P3</div>
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Estudo Exploratório de Dados (EDA) de Mercado Imobiliário</h4>
+                    <p class="text-sm text-indigo-600 font-semibold mb-4">
+                        Tecnologias: Python, Pandas, Matplotlib, Jupyter Notebook
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Análise exploratória detalhada de um dataset imobiliário, identificando *outliers*, correlacionando variáveis-chave (ex: tamanho vs. preço) e gerando insights para auxiliar investidores na precificação.
+                    </p>
+                    <a href="https://github.com/seurepositorio/projeto-eda" target="_blank" class="inline-block text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded-lg font-semibold transition duration-300">
+                        Ver Repositório no GitHub &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Nova Seção: Conteúdos que eu criei -->
+    <section id="conteudos" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
+                Conteúdos que eu criei
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card de Conteúdo 1: Artigo de Blog -->
+                <a href="https://seublog.com/artigo-exemplo" target="_blank" class="block bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 transform hover:shadow-xl hover:scale-[1.02] transition duration-300">
+                    <span class="text-sm text-indigo-600 font-medium mb-1 inline-block">Artigo de Blog</span>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Guia Rápido para Modelagem de Dados no Snowflake</h4>
+                    <p class="text-gray-600 text-sm">Um tutorial detalhado sobre como otimizar esquemas de dados para ambientes de nuvem modernos.</p>
+                </a>
+
+                <!-- Card de Conteúdo 2: Curso/Webinar -->
+                <a href="https://sua-plataforma.com/curso-etl" target="_blank" class="block bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 transform hover:shadow-xl hover:scale-[1.02] transition duration-300">
+                    <span class="text-sm text-indigo-600 font-medium mb-1 inline-block">Curso/Webinar</span>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Mestre em ETL: Construindo Pipelines Robustos com Python e Airflow</h4>
+                    <p class="text-gray-600 text-sm">Treinamento completo sobre orquestração de fluxos de trabalho de dados.</p>
+                </a>
+
+                <!-- Card de Conteúdo 3: Ebook/Apresentação -->
+                <a href="https://seulink.com/ebook-datascience" target="_blank" class="block bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 transform hover:shadow-xl hover:scale-[1.02] transition duration-300">
+                    <span class="text-sm text-indigo-600 font-medium mb-1 inline-block">Ebook / Apresentação</span>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">O Futuro da IA Generativa na Análise de Negócios</h4>
+                    <p class="text-gray-600 text-sm">Minha apresentação sobre as tendências e aplicações práticas de LLMs em BI.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Nova Seção: Currículo/Resume -->
+    <section id="curriculo" class="py-16 md:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
+                Currículo / Resume
+            </h3>
+            <div class="bg-gray-50 p-6 md:p-10 rounded-xl shadow-lg">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para uma visão completa da minha trajetória profissional e acadêmica, incluindo detalhes de cada projeto e responsabilidade, faça o download do meu currículo abaixo.
+                </p>
+                <a href="[LINK_DO_SEU_PDF_CURRICULO]" target="_blank" class="inline-flex items-center bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                    <!-- Ícone de Download (substituindo por um SVG simples) -->
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download do Currículo (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">Entre em contato: <a href="mailto:seu.email@exemplo.com" class="text-indigo-400 hover:text-indigo-300">seu.email@exemplo.com</a></p>
+            <div class="flex justify-center space-x-6">
+                <!-- Ícone LinkedIn -->
+                <a href="https://www.linkedin.com/in/seulinkedin/" target="_blank" aria-label="LinkedIn" class="hover:text-indigo-400 transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4zM6 7a2 2 112-2 2 2 0 012 2 2 2 0 01-2 2z"/></svg>
+                </a>
+                <!-- Ícone GitHub -->
+                <a href="https://github.com/seunomedeusuario" target="_blank" aria-label="GitHub" class="hover:text-indigo-400 transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.819-.203.819-.442 0-.218-.007-.796-.011-1.46-3.344.723-4.04-1.609-4.04-1.609-.547-1.387-1.334-1.756-1.334-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.837 2.809 1.305 3.493.998.108-.77.42-.998.761-1.226-2.665-.3-5.466-1.332-5.466-5.93 0-1.313.47-2.383 1.239-3.221-.124-.303-.535-1.524.118-3.18 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.301-1.23 3.301-1.23.653 1.656.242 2.877.118 3.18.77.838 1.239 1.908 1.239 3.221 0 4.61-2.809 5.62-5.474 5.922.43.374.817 1.118.817 2.251 0 1.619-.015 2.92-.015 3.315 0 .239.219.563.824.441C20.565 21.792 24 17.294 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-gray-500">© 2024 [Seu Nome]. Desenvolvido com HTML e Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- Script para rolagem suave (opcional, mas melhora a UX) -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+>>>>>>> 8da83ee74057ccf5987b455f79caa93ede18ace8
 </html>
