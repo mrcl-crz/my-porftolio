@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Marcelo Cruz</title>
+    <title>Portfólio de Dados - Marcelo Cruz</title>
     <!-- Carrega o Tailwind CSS para estilização fácil e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuração do Tailwind para usar a fonte Inter -->
@@ -51,6 +51,7 @@
                 <a href="#habilidades" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Habilidades</a>
                 <a href="#projetos" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Projetos</a>
                 <a href="#conteudos" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Conteúdos</a>
+                <a href="#curriculo" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Currículo</a>
             </nav>
 
             <!-- Botão Hamburguer (visível apenas no mobile) -->
@@ -67,6 +68,7 @@
             <a href="#habilidades" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Habilidades</a>
             <a href="#projetos" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Projetos</a>
             <a href="#conteudos" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Conteúdos</a>
+            <a href="#curriculo" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Currículo</a>
         </div>
 
     </header>
@@ -83,6 +85,7 @@
                     src="https://i.imgur.com/KkcKeK0.png" 
                     alt="Foto de perfil de Marcelo Cruz" 
                     class="w-40 h-40 rounded-full ring-4 ring-white shadow-xl mb-4"
+                    onerror="this.onerror=null; this.src='https://placehold.co/128x128/94a3b8/ffffff?text=Erro';"
                 >
                 
                 <h2 class="text-5xl md:text-6xl font-extrabold mb-2">
@@ -116,7 +119,7 @@
         </div>
     </section>
     
-    <!-- Nova Seção: Experiência -->
+    <!-- Seção: Experiência -->
     <section id="experiencia" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
@@ -165,7 +168,7 @@
         </div>
     </section>
 
-    <!-- Nova Seção: Formação -->
+    <!-- Seção: Formação -->
     <section id="formacao" class="py-16 md:py-24 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
@@ -188,7 +191,7 @@
         </div>
     </section>
 
-    <!-- Seção de Habilidades (Preenchida com Qualificações) -->
+    <!-- Seção de Habilidades -->
     <section id="habilidades" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
@@ -259,77 +262,27 @@
         </div>
     </section>
 
-    <!-- Seção de Projetos (Mantida com placeholder para links reais) -->
+    <!-- Seção de Projetos -->
     <section id="projetos" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-4xl font-bold text-center mb-16 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Projetos
             </h3>
 
-            <!-- Cards de Projeto (Garantindo responsividade) -->
-
-            <!-- Card de Projeto 1: Exemplo de ML/R (Baseado em Experiência) -->
-            <div id="project-ml-r" class="flex flex-col md:flex-row bg-gray-50 rounded-xl shadow-lg overflow-hidden mb-12 transform hover:shadow-xl transition duration-300">
-                <div class="md:w-1/3 bg-indigo-500 p-6 flex items-center justify-center">
-                    <div class="text-white text-5xl font-bold p-4 border-4 border-white rounded-full">ML</div>
-                </div>
-                <div class="md:w-2/3 p-8">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Modelos de Aprendizado de Máquina (Utilizando Linguagem R)</h4>
-                    <p class="text-sm text-indigo-600 font-semibold mb-4">
-                        Tecnologias: R, Machine Learning, Tidyverse
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        Desenvolvimento de projetos focados em aprendizado de máquina usando a linguagem R, demonstrando a capacidade de aplicar modelos preditivos e técnicas de estatística para extrair insights complexos.
-                    </p>
-                    <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-                        <a href="https://github.com/mrcl-crz/projeto-ml-r-exemplo" target="_blank" class="inline-block text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded-lg font-semibold transition duration-300 text-center">
-                            Ver Repositório no GitHub &rarr;
-                        </a>
-                    </div>
-                </div>
+            <!-- Placeholder 'Em Breve' para Projetos -->
+            <div class="text-center bg-gray-50 p-12 rounded-xl shadow-lg border-2 border-dashed border-indigo-300">
+                <svg class="w-16 h-16 text-indigo-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                <h4 class="text-3xl font-bold text-gray-800 mb-2">Projetos em Construção!</h4>
+                <p class="text-xl text-gray-600">
+                    Esta área está sendo atualizada com novos projetos.
+                </p>
+                <p class="text-sm text-gray-500 mt-4">Enquanto isso, confira os meus conteúdos criados ou a minha experiência profissional.</p>
             </div>
-
-            <!-- Card de Projeto 2: Exemplo de ETL/AWS (Baseado em Experiência) -->
-            <div id="project-etl-aws" class="flex flex-col md:flex-row bg-gray-50 rounded-xl shadow-lg overflow-hidden mb-12 transform hover:shadow-xl transition duration-300">
-                <div class="md:w-1/3 bg-indigo-500 p-6 flex items-center justify-center">
-                    <div class="text-white text-5xl font-bold p-4 border-4 border-white rounded-full">ETL</div>
-                </div>
-                <div class="md:w-2/3 p-8">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Pipeline de Dados Automatizada (AWS ETL)</h4>
-                    <p class="text-sm text-indigo-600 font-semibold mb-4">
-                        Tecnologias: AWS Data Lake, AWS Glue, Step Functions, Python
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        Criação de projetos de ETL para cursos utilizando os serviços da AWS (Glue, Athena, Step Functions) para construir pipelines automatizadas, demonstrando proficiência em Engenharia de Dados e ambientes de nuvem.
-                    </p>
-                    <a href="https://github.com/mrcl-crz/projeto-etl-aws-exemplo" target="_blank" class="inline-block text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded-lg font-semibold transition duration-300">
-                        Ver Repositório no GitHub &rarr;
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card de Projeto 3: Exemplo de BI/DAX (Baseado em Experiência) -->
-            <div id="project-bi-dax" class="flex flex-col md:flex-row bg-gray-50 rounded-xl shadow-lg overflow-hidden mb-12 transform hover:shadow-xl transition duration-300">
-                <div class="md:w-1/3 bg-indigo-500 p-6 flex items-center justify-center">
-                    <div class="text-white text-5xl font-bold p-4 border-4 border-white rounded-full">BI</div>
-                </div>
-                <div class="md:w-2/3 p-8">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3">Dashboards e Criação de Métricas (Power BI e DAX)</h4>
-                    <p class="text-sm text-indigo-600 font-semibold mb-4">
-                        Tecnologias: Power BI, DAX, SQL
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        Desenvolvimento de projetos de visualização e *dashboards* interativos, com forte foco na criação de métricas de negócio e KPIs robustos usando a linguagem DAX no Power BI.
-                    </p>
-                    <a href="https://app.powerbi.com/view?r=seu-link-dashboard-dax" target="_blank" class="inline-block text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded-lg font-semibold transition duration-300">
-                        Ver Dashboard (Link Fictício) &rarr;
-                    </a>
-                </div>
-            </div>
+            
         </div>
     </section>
-    
-    <!-- Nova Seção: Conteúdos que eu criei -->
+
+    <!-- Seção de Conteúdos que eu criei -->
     <section id="conteudos" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 class="text-4xl font-bold text-center mb-8 text-gray-800 border-b-2 border-indigo-500 pb-2">
@@ -379,7 +332,7 @@
                 <a href="https://www.linkedin.com/in/marcelocrz" target="_blank" aria-label="LinkedIn" class="hover:text-indigo-400 transition duration-300">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4zM6 7a2 2 112-2 2 2 0 012 2 2 2 0 01-2 2z"/></svg>
                 </a>
-                <!-- Ícone GitHub - MANTIDO COM PLACEHOLDER -->
+                <!-- Ícone GitHub -->
                 <a href="https://github.com/mrcl-crz" target="_blank" aria-label="GitHub" class="hover:text-indigo-400 transition duration-300">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.819-.203.819-.442 0-.218-.007-.796-.011-1.46-3.344.723-4.04-1.609-4.04-1.609-.547-1.387-1.334-1.756-1.334-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.837 2.809 1.305 3.493.998.108-.77.42-.998.761-1.226-2.665-.3-5.466-1.332-5.466-5.93 0-1.313.47-2.383 1.239-3.221-.124-.303-.535-1.524.118-3.18 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.301-1.23 3.301-1.23.653 1.656.242 2.877.118 3.18.77.838 1.239 1.908 1.239 3.221 0 4.61-2.809 5.62-5.474 5.922.43.374.817 1.118.817 2.251 0 1.619-.015 2.92-.015 3.315 0 .239.219.563.824.441C20.565 21.792 24 17.294 24 12c0-6.627-5.373-12-12-12z"/></svg>
                 </a>
@@ -463,9 +416,8 @@
                 return;
             }
 
-            // Grelha de 3 colunas no desktop, 1 no mobile
-            const gridClass = 'grid grid-cols-1 md:grid-cols-3 gap-8';
-            container.className = gridClass; // Assegura que a classe da grelha é aplicada
+            // Garante que a classe da grelha é aplicada corretamente
+            container.className = 'grid grid-cols-1 md:grid-cols-3 gap-8'; 
 
             filteredContents.forEach(item => {
                 const cardHtml = `
@@ -534,6 +486,11 @@
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
+                    // Fecha o menu móvel se estiver aberto
+                    const menu = document.getElementById('mobile-menu');
+                    if (!menu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
                 });
             });
             
