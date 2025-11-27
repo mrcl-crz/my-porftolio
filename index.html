@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="portfolio_title">Portfólio de Dados - Marcelo Cruz</title>
+    <title>Portfólio de Dados - Marcelo Cruz</title>
     <!-- Carrega o Tailwind CSS para estilização fácil e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuração do Tailwind para usar a fonte Inter -->
@@ -123,32 +123,25 @@
     <!-- Cabeçalho / Navegação -->
     <header class="bg-white shadow-md sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-indigo-600" data-translate="portfolio_header">
+            <h1 class="text-2xl font-bold text-indigo-600">
                 Portfólio - Marcelo Cruz
             </h1>
             
             <!-- Links de navegação para Desktop (visível a partir de md) -->
             <nav class="hidden md:flex space-x-4 items-center">
-                <a href="#sobre" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm" data-translate="nav_about">Sobre Mim</a>
-                <a href="#experiencia" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm" data-translate="nav_experience">Experiência</a>
-                <a href="#formacao" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm" data-translate="nav_education">Formação</a>
-                <a href="#habilidades" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm" data-translate="nav_skills">Habilidades</a>
-                <a href="#projetos" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm" data-translate="nav_projects">Projetos</a>
-                <a href="#conteudos" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm" data-translate="nav_content">Conteúdos</a>
-                <a href="#curriculo" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm" data-translate="nav_resume">Currículo</a>
+                <a href="#sobre" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Sobre Mim</a>
+                <a href="#experiencia" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Experiência</a>
+                <a href="#formacao" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Formação</a>
+                <a href="#habilidades" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Habilidades</a>
+                <a href="#projetos" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Projetos</a>
+                <a href="#conteudos" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Conteúdos</a>
+                <a href="#curriculo" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Currículo</a>
                 
                 <!-- Botão de Modo Escuro para Desktop -->
                 <button id="dark-mode-toggle-desktop" class="text-gray-600 hover:text-indigo-600 focus:outline-none" aria-label="Alternar tema">
                     <svg id="moon-icon-desktop" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     <svg id="sun-icon-desktop" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 </button>
-
-                <!-- Language Switcher -->
-                <div class="flex items-center border-l border-gray-200 dark:border-gray-700 ml-2 pl-4">
-                    <button id="lang-pt-desktop" class="text-sm font-semibold" data-lang="pt">PT</button>
-                    <span class="mx-1 text-gray-400">/</span>
-                    <button id="lang-en-desktop" class="text-sm font-semibold" data-lang="en">EN</button>
-                </div>
             </nav>
 
             <!-- Botão Hamburguer (visível apenas no mobile) -->
@@ -159,33 +152,22 @@
 
         <!-- Menu Dropdown para Mobile (escondido por padrão) -->
         <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white border-t border-gray-100 shadow-inner">
-            <a href="#sobre" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1" data-translate="nav_about_mobile">Sobre Mim</a>
-            <a href="#experiencia" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1" data-translate="nav_experience_mobile">Experiência</a>
-            <a href="#formacao" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1" data-translate="nav_education_mobile">Formação</a>
-            <a href="#habilidades" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1" data-translate="nav_skills_mobile">Habilidades</a>
-            <a href="#projetos" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1" data-translate="nav_projects_mobile">Projetos</a>
-            <a href="#conteudos" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1" data-translate="nav_content_mobile">Conteúdos</a>
-            <a href="#curriculo" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1" data-translate="nav_resume_mobile">Currículo</a>
+            <a href="#sobre" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Sobre Mim</a>
+            <a href="#experiencia" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Experiência</a>
+            <a href="#formacao" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Formação</a>
+            <a href="#habilidades" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Habilidades</a>
+            <a href="#projetos" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Projetos</a>
+            <a href="#conteudos" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Conteúdos</a>
+            <a href="#curriculo" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Currículo</a>
             <!-- Botão de Modo Escuro para Mobile -->
             <div class="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
                 <button id="dark-mode-toggle-mobile" class="w-full flex justify-between items-center text-gray-600 hover:text-indigo-600 py-1" aria-label="Alternar tema">
-                    <span data-translate="change_theme">Mudar Tema</span>
+                    <span>Mudar Tema</span>
                     <div class="relative">
                         <svg id="moon-icon-mobile" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                         <svg id="sun-icon-mobile" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </div>
                 </button>
-            </div>
-            <!-- Language Switcher Mobile -->
-            <div class="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
-                <div class="w-full flex justify-between items-center text-gray-600 py-1">
-                    <span data-translate="change_language">Mudar Idioma</span>
-                    <div class="flex items-center">
-                        <button id="lang-pt-mobile" class="text-sm font-semibold px-2" data-lang="pt">PT</button>
-                        <span class="text-gray-400">/</span>
-                        <button id="lang-en-mobile" class="text-sm font-semibold px-2" data-lang="en">EN</button>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -206,15 +188,15 @@
                     onerror="this.onerror=null; this.src='https://placehold.co/128x128/94a3b8/ffffff?text=Erro';"
                 >
                 
-                <h2 class="text-5xl md:text-6xl font-extrabold mb-2" data-translate="hero_greeting">
+                <h2 class="text-5xl md:text-6xl font-extrabold mb-2">
                     Olá, eu sou Marcelo Cruz
                 </h2>
             </div>
             
-            <p class="text-xl md:text-2xl mb-8 font-light" data-translate="hero_subtitle">
+            <p class="text-xl md:text-2xl mb-8 font-light">
                 Analista de Dados | Criando conteúdo e transformando dados brutos em conhecimento.
             </p>
-            <a href="#conteudos" class="inline-block bg-white text-indigo-700 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105" data-translate="hero_cta">
+            <a href="#conteudos" class="inline-block bg-white text-indigo-700 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
                 Ver Conteúdos Criados
             </a>
         </div>
@@ -223,14 +205,14 @@
     <!-- Seção Sobre Mim -->
     <section id="sobre" class="py-16 md:py-24 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2" data-translate="about_title">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Sobre Mim
             </h3>
             <div class="bg-gray-50 p-6 md:p-10 rounded-xl shadow-lg">
-                <p class="text-lg text-gray-700 leading-relaxed mb-4" data-translate="about_p1">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
                     Sou um profissional de dados com experiência no setor de educação, atuando na maior Edtech da América Latina. Trabalhei na criação de cursos, projetos e outros conteúdos educativos relacionados à análise e ciência de dados. Busco atualmente oportunidades como Analista de Dados.
                 </p>
-                <p class="text-lg text-gray-700 leading-relaxed" data-translate="about_p2">
+                <p class="text-lg text-gray-700 leading-relaxed">
                     Possuo sólida experiência em linguagens como Python, SQL e R, além de ferramentas de visualização líderes de mercado (Power BI, Looker, Qlik). Sou proficiente em tecnologias de nuvem AWS, incluindo a construção de pipelines ETL e o uso de serviços como Data Lake, Athena e Glue.
                 </p>
             </div>
@@ -240,46 +222,46 @@
     <!-- Seção: Experiência -->
     <section id="experiencia" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2" data-translate="experience_title">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Experiência
             </h3>
             <div class="space-y-8">
                 
                 <!-- Item de Experiência 1: Instrutor de Dados -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
-                    <h4 class="text-2xl font-semibold text-gray-800" data-translate="exp1_title">Instrutor de Dados</h4>
-                    <p class="text-indigo-600 font-medium mb-2" data-translate="exp1_company">Alura | 05/2024 - 05/2025</p>
+                    <h4 class="text-2xl font-semibold text-gray-800">Instrutor de Dados</h4>
+                    <p class="text-indigo-600 font-medium mb-2">Alura | 05/2024 - 05/2025</p>
                     <ul class="list-disc list-inside space-y-1 text-gray-700">
-                        <li data-translate="exp1_li1">Desenvolvimento completo de cursos (Gravação/Projetos/Conteúdo) sobre Power BI, SQL, Python, R, QuickSight e Google Cloud.</li>
-                        <li data-translate="exp1_li2">Participação ativa no Fórum de dúvidas para alunos sobre temas de Análise, Ciência e Engenharia de Dados.</li>
-                        <li data-translate="exp1_li3">Criação de projetos de visualização de dados utilizando Power BI, Looker e Qlik.</li>
-                        <li data-translate="exp1_li4">Projetos de criação de métricas para negócios utilizando Power BI e linguagem DAX.</li>
-                        <li data-translate="exp1_li5">Projetos de análise de dados e de aprendizado de máquina utilizando Python, SQL e R.</li>
-                        <li data-translate="exp1_li6">Desenvolvimento de projetos de ETL e pipelines automatizadas utilizando AWS (Glue, Step Functions).</li>
+                        <li>Desenvolvimento completo de cursos (Gravação/Projetos/Conteúdo) sobre Power BI, SQL, Python, R, QuickSight e Google Cloud.</li>
+                        <li>Participação ativa no Fórum de dúvidas para alunos sobre temas de Análise, Ciência e Engenharia de Dados.</li>
+                        <li>Criação de projetos de visualização de dados utilizando Power BI, Looker e Qlik.</li>
+                        <li>Projetos de criação de métricas para negócios utilizando Power BI e linguagem DAX.</li>
+                        <li>Projetos de análise de dados e de aprendizado de máquina utilizando Python, SQL e R.</li>
+                        <li>Desenvolvimento de projetos de ETL e pipelines automatizadas utilizando AWS (Glue, Step Functions).</li>
                     </ul>
                 </div>
                 
                 <!-- Item de Experiência 2: Monitor de Dados -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
-                    <h4 class="text-2xl font-semibold text-gray-800" data-translate="exp2_title">Monitor de Dados</h4>
-                    <p class="text-indigo-600 font-medium mb-2" data-translate="exp2_company">Alura | 04/2023 - 05/2024</p>
+                    <h4 class="text-2xl font-semibold text-gray-800">Monitor de Dados</h4>
+                    <p class="text-indigo-600 font-medium mb-2">Alura | 04/2023 - 05/2024</p>
                     <ul class="list-disc list-inside space-y-1 text-gray-700">
-                        <li data-translate="exp2_li1">Desenvolvimento de projetos e atividades para cursos sobre Power BI, SQL e Python.</li>
-                        <li data-translate="exp2_li2">Suporte a alunos em fóruns de dúvidas sobre temas de Análise, Ciência e Engenharia de Dados.</li>
-                        <li data-translate="exp2_li3">Criação de projetos de visualização e métricas utilizando Power BI, Looker, Qlik e DAX.</li>
-                        <li data-translate="exp2_li4">Produção de artigos com conceitos e ferramentas de dados para disseminação de conhecimento.</li>
+                        <li>Desenvolvimento de projetos e atividades para cursos sobre Power BI, SQL e Python.</li>
+                        <li>Suporte a alunos em fóruns de dúvidas sobre temas de Análise, Ciência e Engenharia de Dados.</li>
+                        <li>Criação de projetos de visualização e métricas utilizando Power BI, Looker, Qlik e DAX.</li>
+                        <li>Produção de artigos com conceitos e ferramentas de dados para disseminação de conhecimento.</li>
                     </ul>
                 </div>
 
                 <!-- Item de Experiência 3: Estágio em Dados -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
-                    <h4 class="text-2xl font-semibold text-gray-800" data-translate="exp3_title">Estágio em Dados</h4>
-                    <p class="text-indigo-600 font-medium mb-2" data-translate="exp3_company">Alura | 04/2022 - 04/2023</p>
+                    <h4 class="text-2xl font-semibold text-gray-800">Estágio em Dados</h4>
+                    <p class="text-indigo-600 font-medium mb-2">Alura | 04/2022 - 04/2023</p>
                     <ul class="list-disc list-inside space-y-1 text-gray-700">
-                        <li data-translate="exp3_li1">Auxílio na criação de conteúdos para cursos na área de dados.</li>
-                        <li data-translate="exp3_li2">Atendimento aos alunos com foco em trazer clareza sobre Análise, Ciência e Engenharia de dados.</li>
-                        <li data-translate="exp3_li3">Suporte em Desafios de dados para mais de mil estudantes.</li>
-                        <li data-translate="exp3_li4">Desenvolvimento de cursos para tecnologias: Python, SQL e Power BI.</li>
+                        <li>Auxílio na criação de conteúdos para cursos na área de dados.</li>
+                        <li>Atendimento aos alunos com foco em trazer clareza sobre Análise, Ciência e Engenharia de dados.</li>
+                        <li>Suporte em Desafios de dados para mais de mil estudantes.</li>
+                        <li>Desenvolvimento de cursos para tecnologias: Python, SQL e Power BI.</li>
                     </ul>
                 </div>
             </div>
@@ -289,21 +271,21 @@
     <!-- Seção: Formação -->
     <section id="formacao" class="py-16 md:py-24 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2" data-translate="education_title">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Formação
             </h3>
             <div class="space-y-8">
                 <!-- Item de Formação 1: Pós Graduação -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
-                    <h4 class="text-2xl font-semibold text-gray-800" data-translate="edu1_title">Pós Graduação em Data Analytics</h4>
-                    <p class="text-indigo-600 font-medium mb-2" data-translate="edu1_institution">FIAP | Conclusão prevista para Abril de 2026</p>
-                    <p class="text-gray-700" data-translate="edu1_desc">Especialização focada em análise avançada de dados e ferramentas de mercado.</p>
+                    <h4 class="text-2xl font-semibold text-gray-800">Pós Graduação em Data Analytics</h4>
+                    <p class="text-indigo-600 font-medium mb-2">FIAP | Conclusão prevista para Abril de 2026</p>
+                    <p class="text-gray-700">Especialização focada em análise avançada de dados e ferramentas de mercado.</p>
                 </div>
                 <!-- Item de Formação 2: Bacharelado -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
-                    <h4 class="text-2xl font-semibold text-gray-800" data-translate="edu2_title">Bacharel em Ciência da Computação</h4>
-                    <p class="text-indigo-600 font-medium mb-2" data-translate="edu2_institution">Fundação Universidade Federal de Rondônia - UNIR | Concluído em 2023</p>
-                    <p class="text-gray-700" data-translate="edu2_desc">Sólida base em lógica de programação, algoritmos e sistemas de informação.</p>
+                    <h4 class="text-2xl font-semibold text-gray-800">Bacharel em Ciência da Computação</h4>
+                    <p class="text-indigo-600 font-medium mb-2">Fundação Universidade Federal de Rondônia - UNIR | Concluído em 2023</p>
+                    <p class="text-gray-700">Sólida base em lógica de programação, algoritmos e sistemas de informação.</p>
                 </div>
             </div>
         </div>
@@ -312,7 +294,7 @@
     <!-- Seção de Habilidades -->
     <section id="habilidades" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2" data-translate="skills_title">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Habilidades
             </h3>
 
@@ -320,19 +302,19 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Coluna 1: Linguagens & Análise -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
-                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600" data-translate="skills_cat1_title">Linguagens & Análise</h4>
+                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600">Linguagens & Análise</h4>
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-center">
-                            <span class="flex items-center" data-translate="skills_cat1_li1">
+                            <span class="flex items-center">
                                 <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 Python (Pandas, Scikit-learn, Análise)
                             </span>
                         </li>
-                        <li class="flex items-center" data-translate="skills_cat1_li2">
+                        <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             SQL (MySQL, SQL Server, Oracle DB, SQLite)
                         </li>
-                        <li class="flex items-center" data-translate="skills_cat1_li3">
+                        <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             R (Aprendizado de Máquina, Tidyverse)
                         </li>
@@ -341,17 +323,17 @@
 
                 <!-- Coluna 2: Visualização e BI -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
-                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600" data-translate="skills_cat2_title">Visualização & BI</h4>
+                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600">Visualização & BI</h4>
                     <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center" data-translate="skills_cat2_li1">
+                        <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             Power BI (DAX, Criação de Métricas)
                         </li>
-                        <li class="flex items-center" data-translate="skills_cat2_li2">
+                        <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             Looker (Google Cloud) / QuickSight (AWS)
                         </li>
-                        <li class="flex items-center" data-translate="skills_cat2_li3">
+                        <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             Qlik / Google Cloud
                         </li>
@@ -360,17 +342,17 @@
 
                 <!-- Coluna 3: Ferramentas e Nuvem -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
-                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600" data-translate="skills_cat3_title">Plataformas & Cloud</h4>
+                    <h4 class="text-2xl font-semibold mb-4 text-indigo-600">Plataformas & Cloud</h4>
                     <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center" data-translate="skills_cat3_li1">
+                        <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             AWS (Data Lake, Athena, Glue, Step Functions)
                         </li>
-                        <li class="flex items-center" data-translate="skills_cat3_li2">
+                        <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             ETL Jobs / Criação de Pipelines Automatizadas
                         </li>
-                        <li class="flex items-center" data-translate="skills_cat3_li3">
+                        <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             Versionamento (Git/GitHub)
                         </li>
@@ -383,18 +365,18 @@
     <!-- Seção de Projetos -->
     <section id="projetos" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-bold text-center mb-16 text-gray-800 border-b-2 border-indigo-500 pb-2" data-translate="projects_title">
+            <h3 class="text-4xl font-bold text-center mb-16 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Projetos
             </h3>
 
             <!-- Placeholder 'Em Breve' para Projetos -->
             <div class="text-center bg-gray-50 p-12 rounded-xl shadow-lg border-2 border-dashed border-indigo-300">
                 <svg class="w-16 h-16 text-indigo-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                <h4 class="text-3xl font-bold text-gray-800 mb-2" data-translate="projects_wip_title">Projetos em Construção!</h4>
-                <p class="text-xl text-gray-600" data-translate="projects_wip_p1">
+                <h4 class="text-3xl font-bold text-gray-800 mb-2">Projetos em Construção!</h4>
+                <p class="text-xl text-gray-600">
                     Esta área está sendo atualizada com novos projetos.
                 </p>
-                <p class="text-sm text-gray-500 mt-4" data-translate="projects_wip_p2">Enquanto isso, confira os meus conteúdos criados ou a minha experiência profissional.</p>
+                <p class="text-sm text-gray-500 mt-4">Enquanto isso, confira os meus conteúdos criados ou a minha experiência profissional.</p>
             </div>
             
         </div>
@@ -403,7 +385,7 @@
     <!-- Seção de Conteúdos que eu criei -->
     <section id="conteudos" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-bold text-center mb-8 text-gray-800 border-b-2 border-indigo-500 pb-2" data-translate="content_title">
+            <h3 class="text-4xl font-bold text-center mb-8 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Conteúdos que eu criei
             </h3>
 
@@ -422,16 +404,16 @@
     <!-- Nova Seção: Currículo/Resume -->
     <section id="curriculo" class="py-16 md:py-24 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2" data-translate="resume_title">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800 border-b-2 border-indigo-500 pb-2">
                 Currículo
             </h3>
             <div class="bg-gray-50 p-6 md:p-10 rounded-xl shadow-lg">
-                <p class="text-lg text-gray-700 leading-relaxed mb-6" data-translate="resume_p1">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Para uma visão completa da minha trajetória profissional e acadêmica, incluindo detalhes de cada projeto e responsabilidade, faça o download do meu currículo (CV) em PDF abaixo.
                 </p>
                 <a href="https://drive.google.com/file/d/1pa2UPcfN0DVYPrit_MZJVuvOWLurSs-3/view?usp=sharing" target="_blank" class="inline-flex items-center bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    <span data-translate="resume_cta">Download do Currículo (PDF)</span>
+                    Download do Currículo (PDF)
                 </a>
             </div>
         </div>
