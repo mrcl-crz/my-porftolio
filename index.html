@@ -116,6 +116,26 @@
             background-color: #1e293b;
             border-color: #334155;
         }
+
+        /* Moldura sutil para imagens dos dashboards (evita borda "infinita") */
+        .img-frame {
+            border: 1px solid #e5e7eb; /* gray-200 */
+        }
+        .dark .img-frame {
+            border-color: #475569; /* slate-600 */
+        }
+
+        /* Rótulo da ferramenta de Data Viz */
+        .viz-badge {
+            color: #3730a3; /* indigo-800 */
+            background-color: #eef2ff; /* indigo-50 */
+            border: 1px solid #c7d2fe; /* indigo-200 */
+        }
+        .dark .viz-badge {
+            color: #e0e7ff; /* indigo-100 */
+            background-color: rgba(79, 70, 229, 0.22); /* indigo-600 @ ~22% */
+            border-color: #818cf8; /* indigo-400 */
+        }
     </style>
 </head>
 <body>
@@ -134,6 +154,7 @@
                 <a href="#formacao" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Formação</a>
                 <a href="#habilidades" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Habilidades</a>
                 <a href="#projetos" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Projetos</a>
+                <a href="#dashboards" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Dashboards</a>
                 <a href="#conteudos" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Conteúdos</a>
                 <a href="#curriculo" class="text-gray-600 hover:text-indigo-600 transition duration-300 text-sm">Currículo</a>
                 
@@ -157,6 +178,7 @@
             <a href="#formacao" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Formação</a>
             <a href="#habilidades" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Habilidades</a>
             <a href="#projetos" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Projetos</a>
+            <a href="#dashboards" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Dashboards</a>
             <a href="#conteudos" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Conteúdos</a>
             <a href="#curriculo" onclick="toggleMenu()" class="block text-gray-600 hover:text-indigo-600 transition duration-300 py-1">Currículo</a>
             <!-- Botão de Modo Escuro para Mobile -->
@@ -375,6 +397,28 @@
                 <p class="text-sm text-gray-500 mt-4">Enquanto isso, confira os meus conteúdos criados ou a minha experiência profissional.</p>
             </div>
             
+        </div>
+    </section>
+
+    <!-- Seção de Dashboards -->
+    <section id="dashboards" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-bold text-center mb-8 text-gray-800 border-b-2 border-indigo-500 pb-2">
+                Dashboards
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
+                    <div class="img-frame rounded-lg mb-4 overflow-hidden">
+                        <img src="Capas Dashboards/capa-dashboard-xpcourses.jpg" alt="Capa do Dashboard XPCourses (Power BI)" class="w-full h-48 object-cover" loading="lazy">
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Dashboard de vendas de cursos online da XPCourses, uma empresa fictícia do ramo da educação. O objetivo do dashboard é abordar os principais KPIs relacionados às vendas da XPCourses, com o foco em explorar as principais necessidades da empresa, como Vendas, Afiliados e Cocriadores, Perfil do Consumidor, Recorrência de Pagamento e Perfil dos Criadores.</p>
+                    <span class="viz-badge block w-fit text-xs font-semibold rounded-full px-3 py-1 mb-6">Power BI</span>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiMWIzODY0ODYtMjRiOS00ZjM5LWI2ODEtNDFjNTVmNThiMTFjIiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9&pageName=4b1796ef05aae3623394" target="_blank" class="inline-flex items-center bg-indigo-600 text-white font-semibold py-2.5 px-5 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300">
+                        Acessar Dashboard
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
