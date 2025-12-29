@@ -601,20 +601,12 @@
             { type: 'Artigo Alura', title: 'Portfólio em Dados', description: 'Dicas e orientações para criar um portfólio eficaz na área de dados.', link: 'https://www.alura.com.br/artigos/portfolio-em-dados', typeKey: 'artigo', tags: ['Carreira'] },
         ];
 
-        // 2. Função utilitária para obter tags únicas
+        // 2. Função utilitária para obter tags únicas (inclui filtros de tipo)
         function getUniqueTags() {
-            const tagSet = new Set(['Todos']);
-            contents.forEach(item => {
-                item.tags.forEach(tag => tagSet.add(tag));
-            });
-            // Converte para array e ordena, mantendo 'Todos' em primeiro
-            const tags = Array.from(tagSet);
-            tags.sort((a, b) => {
-                if (a === 'Todos') return -1;
-                if (b === 'Todos') return 1;
-                return a.localeCompare(b);
-            });
-            return tags;
+            const otherTags = Array.from(new Set(contents.flatMap(item => item.tags)))
+                .sort((a, b) => a.localeCompare(b));
+            // Mantém ordem fixa para filtros principais e adiciona demais tags ordenadas
+            return ['Todos', 'Cursos', 'Artigos', ...otherTags];
         }
 
         // 3. Função para gerar os cards de conteúdo
@@ -623,9 +615,16 @@
             if (!container) return;
 
             // Filtra o conteúdo com base no filtro ativo
-            const filteredContents = currentFilter === 'Todos'
-                ? contents
-                : contents.filter(item => item.tags.includes(currentFilter));
+            let filteredContents;
+            if (currentFilter === 'Todos') {
+                filteredContents = contents;
+            } else if (currentFilter === 'Cursos') {
+                filteredContents = contents.filter(item => item.typeKey === 'curso');
+            } else if (currentFilter === 'Artigos') {
+                filteredContents = contents.filter(item => item.typeKey === 'artigo');
+            } else {
+                filteredContents = contents.filter(item => item.tags.includes(currentFilter));
+            }
             
             container.innerHTML = '';
             
